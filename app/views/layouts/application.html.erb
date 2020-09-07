@@ -3,12 +3,24 @@
   <head>
     <title>Kongtube</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-brand">
+        <%= fa_icon "youtube-play", class: "text-danger mr-2" %>
+        KONGTUBE
+      </a>
+      <div>
+        <% if current_user %>
+          <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-danger ml-auto" %>
+        <% else %>
+          <%= link_to "login", new_user_session_path, class:"btn btn-danger ml-auto" %>
+          <%= link_to "register", new_user_registration_path, class:"btn btn-outline-danger" %>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
