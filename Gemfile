@@ -46,6 +46,7 @@ gem 'rubocop'
 
 #File upload
 gem 'carrierwave'
+gem 'certified'
 gem 'kaminari'
 
 group :development, :test do

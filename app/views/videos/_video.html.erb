@@ -1,6 +1,6 @@
-<div class="col-3">
+<div class="col-3 mb-3">
   <div class="card">
-    <%= image_tag video.image.url, class: "w-100" if video.image? %>
+    <%= image_tag video.image.url, class: "video-thumbnail w-100" if video.image? %>
     <div class="card-body">
       <%= link_to video, class: "text-dark" do %>
         <strong><%= video.title %></strong>
