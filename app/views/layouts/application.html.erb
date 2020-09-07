@@ -12,9 +12,13 @@
         <%= fa_icon "youtube-play", class: "text-danger mr-2" %>
         KONGTUBE
       </a>
+      <%= form_tag videos_path, method: :get, class: "form-inline" do %>
+        <%= text_field_tag :q, params[:q], class: "form control mr-2" %>
+        <%= submit_tag "search", class: "btn btn-danger" %>
+      <% end %>
       <div>
         <% if current_user %>
-        <%= link_to "upload", new_video_path, class: "btn btn-danger" %>
+          <%= link_to "upload", new_video_path, class: "btn btn-danger" %>
           <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
         <% else %>
           <%= link_to "login", new_user_session_path, class:"btn btn-danger" %>
