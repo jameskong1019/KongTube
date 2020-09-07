@@ -271,6 +271,7 @@ DEPENDENCIES
   devise
   font-awesome-rails
   jbuilder (~> 2.5)
+  kaminari
   puma (~> 3.7)
   rails (~> 5.1.3)
   rails_db

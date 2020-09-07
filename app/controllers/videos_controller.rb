@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   include ActionView::Helpers::TextHelper
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_owner, only: [:edit, :update, :destroy]
   # GET /videos
   # GET /videos.json
   def index
@@ -74,5 +74,10 @@ class VideosController < ApplicationController
     # Only allow a list of trusted parameters through.
     def video_params
       params.require(:video).permit(:title, :description, :file, :image)
+    end
+
+    # Check a user if it is a owner of the video
+    def check_owner
+      redirect_to root_path unless @video.user == current_user
     end
 end
