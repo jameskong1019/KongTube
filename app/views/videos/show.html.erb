@@ -1,24 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<%= video_tag @video.file.url, controls: true, class: "w-100" if @video.file? %>
+<h4>
   <%= @video.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @video.user %>
-</p>
-
-<p>
-  <strong>View count:</strong>
-  <%= @video.view_count %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+</h4>
+uploader: <%= @video.user.email %>
+<%= simple_format @video.description %>
+<%= @video.view_count.to_i %> <%= pluralize_without_count(@video.view_count.to_i, 'view') %>
+<div class="mt-2">
+  <%= link_to 'Edit', edit_video_path(@video), class: "btn btn-outline-primary" %>
+  <%= link_to 'Delete', @video, method: :delete, data: {confirm: "Are You Sure?"}, class: "btn btn-outline-danger" %>
+</div>

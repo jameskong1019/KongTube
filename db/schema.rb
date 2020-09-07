@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200907162808) do
+ActiveRecord::Schema.define(version: 20200907170208) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20200907162808) do
     t.integer "view_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file"
+    t.string "image"
     t.index ["user_id"], name: "index_videos_on_user_id"
     t.index ["view_count"], name: "index_videos_on_view_count"
   end

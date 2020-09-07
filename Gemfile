@@ -33,16 +33,19 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#bootstrap
-gem 'sassc', '~> 2.1.0'
+# bootstrap
 gem 'bootstrap'
+gem 'debase'
 gem 'font-awesome-rails'
+gem 'sassc', '~> 2.1.0'
 
 gem 'ruby-debug-ide'
-gem 'debase'
-#User Login
+# user Login
 gem 'devise'
 gem 'rubocop'
+
+#File upload
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +53,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rails_db'
 end
 
 group :development do
