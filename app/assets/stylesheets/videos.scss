@@ -1,7 +1,7 @@
 // Place all the styles related to the videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$small: 400px;
+$small: 500px;
 $medium: 900px;
 .search-bar-container {
     @media screen and (max-width: $small) {
@@ -17,4 +17,11 @@ $medium: 900px;
 .video-thumbnail {
     min-height: 300px;
     max-height: 300px;
+    object-fit: cover;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
