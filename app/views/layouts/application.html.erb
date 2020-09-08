@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kongtube</title>
+    <title>KONGTUBE</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <nav class="navbar">
       <a href="/" class="navbar-brand">
-        <%= fa_icon "youtube-play", class: "text-danger mr-2" %>
+        <%= fa_icon "youtube-play", class: "text-danger mr-2 order-0" %>
         KONGTUBE
       </a>
-      <%= form_tag videos_path, method: :get, class: "form-inline" do %>
-        <%= text_field_tag :q, params[:q], class: "form control mr-2" %>
+      <%= form_tag videos_path, method: :get, class: "search-bar-container form-group form-inline mt-3 mt-md-0 order-2 order-md-1" do %>
+        <%= text_field_tag :q, params[:q], class: "search-bar form control mr-2" %>
         <%= submit_tag "search", class: "btn btn-danger" %>
       <% end %>
-      <div>
+      <div class="order-1 order-md-2">
         <% if current_user %>
           <%= link_to "upload", new_video_path, class: "btn btn-danger" %>
           <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>

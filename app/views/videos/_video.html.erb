@@ -1,12 +1,12 @@
-<div class="col-3 mb-3">
+<div class="col-12 col-md-3 mb-3">
   <div class="card">
-    <%= image_tag video.image.url, class: "video-thumbnail w-100" if video.image? %>
-    <div class="card-body">
-      <%= link_to video, class: "text-dark" do %>
+    <%= link_to video, class: "text-dark" do %>
+      <%= image_tag video.image.url, class: "video-thumbnail w-100" if video.image? %>
+      <div class="card-body">
         <strong><%= video.title %></strong>
         <p class="small"><%= truncate video.description, length: 30 %></p>
         <p class="text-gray small"><%= time_ago_in_words video.created_at %> ago, <%= video.view_count.to_i %> <%= pluralize_without_count(video.view_count.to_i, 'view') %></p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
