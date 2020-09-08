@@ -25,3 +25,14 @@ $medium: 900px;
     align-items: center;
     justify-content: center;
 }
+
+.comment-body {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.comment-created {
+    @media screen and (max-width: $small) {
+        display: block;
+    }
+}
